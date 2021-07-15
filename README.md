@@ -1,2 +1,2 @@
-# my-new-project
-project for code
+# numpy-pandas-visualization-exercises
+visualization exercises
