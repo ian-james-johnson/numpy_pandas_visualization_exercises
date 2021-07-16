@@ -116,40 +116,54 @@ print(b_max[0])
 # Exercise 4 - refactor the following using numpy to find the mean of b
 mean_of_b = (sum(b[0]) + sum(b[1])) / (len(b[0]) + len(b[1]))
 
-my_mean = b.sum() / 
+mean_of_b = b.mean()
 
-r = b[0].shape
-r
-
-
-b[0].shape * b[1].shape
-v[0]
 # Exercise 5 - refactor the following to use numpy for calculating the product of all numbers multiplied together.
 product_of_b = 1
 for row in b:
 for number in row:
 product_of_b *= number
+
+product_of_b = b.prod()
+
 # Exercise 6 - refactor the following to use numpy to find the list of squares 
 squares_of_b = []
 for row in b:
 for number in row:
 squares_of_b.append(number**2)
+
+squares_of_b = b**2
+
 # Exercise 7 - refactor using numpy to determine the odds_in_b
 odds_in_b = []
 for row in b:
 for number in row:
 if(number % 2 != 0):
 odds_in_b.append(number)
+
+odds_in_b = b[b % 2 != 0]
+
 # Exercise 8 - refactor the following to use numpy to filter only the even numbers
 evens_in_b = []
 for row in b:
 for number in row:
 if(number % 2 == 0):
 evens_in_b.append(number)
+
+evens_in_b = b[b % 2 == 0]
+
 # Exercise 9 - print out the shape of the array b.
+print(b.shape)``
+
 # Exercise 10 - transpose the array b.
+b.transpose()
+
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
+b.reshape(1,6)
+
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
+b.reshape(6,1)
+
 ## Setup 3
 c = [
     [1, 2, 3],
@@ -158,13 +172,24 @@ c = [
 ]
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
+c.min()
+c.max()
+c.sum()
+c.prod()
 # Exercise 2 - Determine the standard deviation of c.
+c.std()
 # Exercise 3 - Determine the variance of c.
+c.var()
 # Exercise 4 - Print out the shape of the array c
+pritn(c.shape)
 # Exercise 5 - Transpose c and print out transposed result.
+print(c.transpose())
 # Exercise 6 - Get the dot product of the array c with c. 
+np.dot(c,c)
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
+sum(sum(c*c.transpose()))
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
+(c*c.transpose()).prod()
 ## Setup 4
 d = [
     [90, 30, 45, 0, 120, 180],
@@ -172,12 +197,22 @@ d = [
     [60, 45, -45, 90, -45, 180]
 ]
 # Exercise 1 - Find the sine of all the numbers in d
+np.sin(d)
 # Exercise 2 - Find the cosine of all the numbers in d
+np.cos(d)
 # Exercise 3 - Find the tangent of all the numbers in d
+np.tan(d)
 # Exercise 4 - Find all the negative numbers in d
+d[d<0]
 # Exercise 5 - Find all the positive numbers in d
+d[d>0]
 # Exercise 6 - Return an array of only the unique numbers in d.
+np.unique(d)
 # Exercise 7 - Determine how many unique numbers there are in d.
+len(np.unique(d))
 # Exercise 8 - Print out the shape of d.
+print(d.shape)
 # Exercise 9 - Transpose and then print out the shape of d.
+print(d.transpose())
 # Exercise 10 - Reshape d into an array of 9 x 2
+d.reshape(9,2)
